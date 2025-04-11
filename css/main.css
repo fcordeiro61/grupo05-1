@@ -1,0 +1,347 @@
+/* ==========================
+   VARIÁVEIS E RESET GERAL
+========================== */
+:root {
+    --primary-color: #4361ee;
+    --background-color: #4361ee;
+    --primary-font-color: #000;
+    --secondary-font-color: white;
+    --error-color: #e63946;
+    --success-color: #38a169;
+    --placeholder-color: #888;
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --font-size-small: 0.875rem;
+    --font-size-medium: 1rem;
+  }
+  
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+  }
+  
+  main {
+    flex: 1;
+  }
+  
+  /* ==========================
+     CONTEÚDO PRINCIPAL
+  ========================== */
+  .main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+  }
+  
+  .card {
+    background-color: #fff;
+    padding: var(--spacing-lg);
+    border-top: 4px solid var(--primary-color);
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    animation: fadeIn 0.5s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  .card-title {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-md);
+    text-align: center;
+  }
+  
+  /* ==========================
+     FORMULÁRIOS E INPUTS
+  ========================== */
+  .form-group {
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .input-with-icon {
+    position: relative;
+  }
+  
+  .input-icon-wrapper {
+    position: relative;
+    width: 100%;
+  }
+  
+  .input-icon-left {
+    position: absolute;
+    left: var(--spacing-sm);
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--placeholder-color);
+    pointer-events: none;
+  }
+  
+  .icon-left {
+    position: absolute;
+    top: 50%;
+    left: 0.75rem;
+    transform: translateY(-50%);
+    color: #999;
+    font-size: 1rem;
+    pointer-events: none;
+  }
+  
+  .form-input {
+    width: 100%;
+    padding: 0.75rem 2.5rem 0.75rem 2.25rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+  }
+  
+  .form-input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.15);
+  }
+  
+  input[type="password"]::-ms-reveal,
+  input[type="password"]::-webkit-credentials-auto-fill-button,
+  input[type="password"]::-webkit-textfield-decoration-container {
+    display: none !important;
+  }
+  
+  .password-container {
+    position: relative;
+  }
+  
+  .password-toggle {
+    position: absolute;
+    top: 50%;
+    right: 0.75rem;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #999;
+    font-size: 1rem;
+    z-index: 2;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .btn {
+    width: 100%;
+    padding: var(--spacing-sm);
+    font-size: var(--font-size-medium);
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .btn i {
+    margin-right: var(--spacing-xs);
+  }
+  
+  .text-right {
+    text-align: right;
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .signup-link {
+    margin-top: var(--spacing-md);
+  }
+  
+  .form-message.error {
+    color: var(--error-color);
+    font-size: var(--font-size-small);
+    margin-top: var(--spacing-xs);
+    display: none;
+  }
+  
+  .form-input.is-invalid {
+    border-color: var(--error-color);
+  }
+  
+  .form-input.is-invalid + .form-message,
+  .input-with-icon .form-input.is-invalid ~ .form-message {
+    display: block;
+  }
+  
+  /* ==========================
+     HEADER E FOOTER
+  ========================== */
+  header, footer {
+    background-color: var(--background-color);
+    color: var(--secondary-font-color);
+    padding: 0.5rem;
+  }
+  
+  footer {
+    text-align: left;
+    font-size: 0.85rem;
+  }
+  
+  /* ==========================
+     MENU DESKTOP E MOBILE
+  ========================== */
+  .site-header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem;
+    position: relative;
+    z-index: 10;
+  }
+  
+  .header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .site-title {
+    font-size: 1.5rem;
+    margin: 0;
+    flex: 1;
+    text-align: left;
+  }
+  
+  .logo {
+    width: 50px;
+    height: 50px;
+    visibility: visible;
+    background-color: transparent;
+    margin-left: auto;
+  }
+  
+  .desktop-menu {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .desktop-menu ul {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .desktop-menu a {
+    color: white;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 2px;
+    transition: all 0.3s;
+  }
+  
+  .desktop-menu a.active {
+    color: #ccc;
+    border-color: #ccc;
+  }
+  
+  .desktop-menu a:hover {
+    color: #ffcc00;
+    border-color: #ffcc00;
+  }
+  
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  .mobile-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: var(--primary-color);
+    padding: 0.75rem 1rem;
+    z-index: 20;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    animation: slideDown 0.3s ease forwards;
+    border-radius: 0 0 0.5rem 0.5rem;
+    width: auto;
+    min-width: 160px;
+  }
+  
+  
+  
+  .mobile-menu.show {
+    display: block;
+  }
+  
+  .mobile-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: right;
+  }
+  
+  .mobile-menu li {
+    margin-bottom: 1rem;
+  }
+  
+  .mobile-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+  }
+  
+  @media (max-width: 768px) {
+    .desktop-menu {
+      display: none;
+    }
+  
+    .menu-toggle {
+      display: block;
+    }
+  
+    .header-content {
+        justify-content: space-between;
+        flex-wrap: nowrap; /* Impede quebra de linha */
+      }
+  
+      .site-title {
+        flex-grow: 1;
+        text-align: left;
+      }
+    
+      .menu-toggle {
+        margin-left: auto;
+      }
+  }
+  
+  /* ==========================
+     ANIMAÇÕES
+  ========================== */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
