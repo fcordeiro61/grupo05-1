@@ -1,0 +1,35 @@
+services:
+  web:
+    build:
+      context: ./docker/php-apache
+    ports:
+      - "8080:80"
+    volumes:
+      - ./src:/var/www/html
+    depends_on:
+      - db
+
+  db:
+    build:
+      context: ./docker/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: minha_base
+      MYSQL_USER: meu_usuario
+      MYSQL_PASSWORD: minha_senha
+    ports:
+      - "3306:3306"
+    volumes:
+      - /mnt/d/docker/volumes/mysql:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    ports:
+      - "8081:80"
+    environment:
+      PMA_HOST: db
+      PMA_USER: meu_usuario
+      PMA_PASSWORD: minha_senha
+    depends_on:
+      - db

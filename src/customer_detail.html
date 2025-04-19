@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Detalhes do Cliente</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/customer.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script defer src="js/main.js"></script>
+  <script defer src="js/customer.js"></script>
+</head>
+<body>
+  <header>
+    <div id="header-container"></div>
+  </header>
+
+  <main>
+    <section class="customer-list">
+      <div class="list-header">
+        <h2>Detalhes do Cliente</h2>
+      </div>
+
+      <div class="form-container">
+        <form class="user-form">
+          <div class="form-group w-full">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" required />
+          </div>
+
+          <div class="form-group w-70">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+
+          <div class="form-group w-30">
+            <label for="estrangeiro">Você é estrangeiro?</label>
+            <select id="estrangeiro" name="estrangeiro" required>
+              <option value="nao" selected>Não</option>
+              <option value="sim">Sim</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group w-50" id="cpf-container">
+              <label for="cpf">CPF</label>
+              <input type="text" id="cpf" name="cpf" />
+            </div>
+
+            <div class="form-group w-50" id="rnm-container" style="display: none;">
+              <label for="rnm">Número do RNM</label>
+              <input type="text" id="rnm" name="rnm" />
+            </div>
+          </div>
+
+          <div class="form-group w-40">
+            <label for="nascimento">Data de Nascimento</label>
+            <input type="date" id="nascimento" name="nascimento" required />
+          </div>
+
+          <div class="form-group w-40">
+            <label for="cep">CEP</label>
+            <input type="text" id="cep" name="cep" required />
+          </div>
+
+          <div class="form-group w-full">
+            <label for="rua">Rua</label>
+            <input type="text" id="rua" name="rua" required />
+          </div>
+
+          <div class="form-row">
+            <div class="form-group w-30">
+              <label for="numero">Número</label>
+              <input type="text" id="numero" name="numero" required />
+            </div>
+
+            <div class="form-group w-70">
+              <label for="complemento">Complemento</label>
+              <input type="text" id="complemento" name="complemento" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group w-60">
+              <label for="bairro">Bairro</label>
+              <input type="text" id="bairro" name="bairro" required />
+            </div>
+
+            <div class="form-group w-40">
+              <label for="cidade">Cidade</label>
+              <input type="text" id="cidade" name="cidade" required />
+            </div>
+          </div>
+
+          <div class="form-group w-30">
+            <label for="estado">Estado</label>
+            <select id="estado" name="estado" required>
+              <option value="" disabled selected>Selecione</option>
+              <option value="estrangeiro">Estrangeiro</option>
+              <option value="AC">Acre</option>
+              <option value="AL">Alagoas</option>
+              <option value="AP">Amapá</option>
+              <option value="AM">Amazonas</option>
+              <option value="BA">Bahia</option>
+              <option value="CE">Ceará</option>
+              <option value="DF">Distrito Federal</option>
+              <option value="ES">Espírito Santo</option>
+              <option value="GO">Goiás</option>
+              <option value="MA">Maranhão</option>
+              <option value="MT">Mato Grosso</option>
+              <option value="MS">Mato Grosso do Sul</option>
+              <option value="MG">Minas Gerais</option>
+              <option value="PA">Pará</option>
+              <option value="PB">Paraíba</option>
+              <option value="PR">Paraná</option>
+              <option value="PE">Pernambuco</option>
+              <option value="PI">Piauí</option>
+              <option value="RJ">Rio de Janeiro</option>
+              <option value="RN">Rio Grande do Norte</option>
+              <option value="RS">Rio Grande do Sul</option>
+              <option value="RO">Rondônia</option>
+              <option value="RR">Roraima</option>
+              <option value="SC">Santa Catarina</option>
+              <option value="SP">São Paulo</option>
+              <option value="SE">Sergipe</option>
+              <option value="TO">Tocantins</option>
+            </select>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn-add">
+              <i class="fas fa-save"></i> Salvar
+            </button>
+            <button type="button" class="btn-cancel">
+              <i class="fas fa-arrow-left"></i> Voltar
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div id="footer-container"></div>
+  </footer>
+
+  <script>
+    // Alterna CPF/RNM com base na seleção estrangeiro
+    document.addEventListener("DOMContentLoaded", () => {
+      const select = document.getElementById("estrangeiro");
+      const cpfContainer = document.getElementById("cpf-container");
+      const rnmContainer = document.getElementById("rnm-container");
+
+      function toggleDocumentos() {
+        if (select.value === "sim") {
+          cpfContainer.style.display = "none";
+          rnmContainer.style.display = "block";
+        } else {
+          cpfContainer.style.display = "block";
+          rnmContainer.style.display = "none";
+        }
+      }
+
+      select.addEventListener("change", toggleDocumentos);
+      toggleDocumentos(); // chama ao carregar
+    });
+  </script>
+</body>
+</html>
