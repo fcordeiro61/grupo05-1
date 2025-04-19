@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="google" content="notranslate">
+  <title>Manutenção de Usuários</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/customer.css" />
+  <link rel="stylesheet" href="css/user.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script defer src="js/main.js"></script>
+  <script defer src="js/user.js"></script>
+</head>
+<body>
+
+  <header>
+    <div id="header-container"></div>
+  </header>
+
+  <main class="main-scroll">
+    <section class="customer-list">
+      <div class="list-header">
+        <h2>Usuários</h2>
+        <button class="btn-add">
+          <i class="fas fa-user-plus"></i> Adicionar Usuário
+        </button>
+      </div>
+
+      <div class="card-container">
+
+        <!-- Usuário 1 -->
+        <div class="customer-card">
+          <h3>João da Silva</h3>
+          <p>Email: joao@exemplo.com</p>
+          <p>CPF: 123.456.789-00</p>
+          <p>Perfil: <span class="perfil admin">Admin</span></p>
+          <div class="actions">
+            <button class="btn-icon" title="Editar">
+              <i class="fas fa-edit"></i>
+            </button>
+            <button class="btn-icon" title="Desativar">
+              <i class="fas fa-user-slash"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Usuário 2 (desativado) -->
+        <div class="customer-card desativado">
+          <h3>Maria Oliveira</h3>
+          <p>Email: maria@exemplo.com</p>
+          <p>CPF: 234.567.890-11</p>
+          <p>Perfil: <span class="perfil atendente">Atendente</span></p>
+          <div class="actions">
+            <button class="btn-icon" title="Editar">
+              <i class="fas fa-edit"></i>
+            </button>
+            <button class="btn-icon" title="Ativar">
+              <i class="fas fa-user-check"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Usuário 3 -->
+        <div class="customer-card">
+          <h3>Lucas Pereira</h3>
+          <p>Email: lucas@exemplo.com</p>
+          <p>CPF: 345.678.901-22</p>
+          <p>Perfil: <span class="perfil cliente">Cliente</span></p>
+          <div class="actions">
+            <button class="btn-icon" title="Editar">
+              <i class="fas fa-edit"></i>
+            </button>
+            <button class="btn-icon" title="Desativar">
+              <i class="fas fa-user-slash"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Usuário 4 -->
+        <div class="customer-card">
+          <h3>Fernanda Lima</h3>
+          <p>Email: fernanda@exemplo.com</p>
+          <p>CPF: 456.789.012-33</p>
+          <p>Perfil: <span class="perfil admin">Admin</span></p>
+          <div class="actions">
+            <button class="btn-icon" title="Editar">
+              <i class="fas fa-edit"></i>
+            </button>
+            <button class="btn-icon" title="Desativar">
+              <i class="fas fa-user-slash"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Usuário 5 -->
+        <div class="customer-card">
+          <h3>Paulo Souza</h3>
+          <p>Email: paulo@exemplo.com</p>
+          <p>CPF: 567.890.123-44</p>
+          <p>Perfil: <span class="perfil atendente">Atendente</span></p>
+          <div class="actions">
+            <button class="btn-icon" title="Editar">
+              <i class="fas fa-edit"></i>
+            </button>
+            <button class="btn-icon" title="Desativar">
+              <i class="fas fa-user-slash"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Usuário 6 (desativado) -->
+        <div class="customer-card desativado">
+          <h3>Ana Costa</h3>
+          <p>Email: ana@exemplo.com</p>
+          <p>CPF: 678.901.234-55</p>
+          <p>Perfil: <span class="perfil cliente">Cliente</span></p>
+          <div class="actions">
+            <button class="btn-icon" title="Editar">
+              <i class="fas fa-edit"></i>
+            </button>
+            <button class="btn-icon" title="Ativar">
+              <i class="fas fa-user-check"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div id="footer-container"></div>
+  </footer>
+
+</body>
+</html>

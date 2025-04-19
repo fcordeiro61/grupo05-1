@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lista de Clientes</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/customer.css">
+  
+
+</head>
+<body>
+
+  <header>
+    <div id="header-container"></div>
+  </header>
+
+  <main class="main-scroll">
+    <section class="customer-list">
+      <div class="list-header">
+        <h2>Lista de Clientes</h2>
+        <button class="btn-add" title="Adicionar cliente">
+          <i class="fas fa-user-plus"></i> Adicionar
+        </button>
+      </div>
+  
+      <div class="card-container">
+        <!-- Card 1 -->
+        <div class="customer-card">
+          <div><strong>CPF:</strong> 123.456.789-00</div>
+          <div><strong>Nome:</strong> João Silva</div>
+          <div><strong>Email:</strong> joao@email.com</div>
+          <div><strong>Telefone:</strong> (11) 98765-4321</div>
+          <div class="actions">
+            <button class="btn-icon" title="Editar">
+              <i class="fas fa-edit"></i>
+            </button>
+            <button class="btn-icon" title="Desativar">
+              <i class="fas fa-user-slash"></i>
+            </button>
+          </div>
+        </div>
+  
+        <!-- Card 2 -->
+        <div class="customer-card desativado">
+          <div><strong>CPF:</strong> 987.654.321-00</div>
+          <div><strong>Nome:</strong> Maria Souza</div>
+          <div><strong>Email:</strong> maria@email.com</div>
+          <div><strong>Telefone:</strong> (21) 91234-5678</div>
+          <div class="actions">
+            <button class="btn-icon" title="Editar">
+              <i class="fas fa-edit"></i>
+            </button>
+            <button class="btn-icon btn-toggle" title="Ativar">
+              <i class="fas fa-toggle-on"></i>
+            </button>
+          </div>
+        </div>
+  
+        <!-- Cards 3 a 6 -->
+        <div class="customer-card">
+          <div><strong>CPF:</strong> 321.654.987-00</div>
+          <div><strong>Nome:</strong> Ana Lima</div>
+          <div><strong>Email:</strong> ana@email.com</div>
+          <div><strong>Telefone:</strong> (31) 99876-1234</div>
+          <div class="actions">
+            <button class="btn-icon" title="Editar">
+              <i class="fas fa-edit"></i>
+            </button>
+            <button class="btn-icon" title="Desativar">
+              <i class="fas fa-user-slash"></i>
+            </button>
+          </div>
+        </div>
+  
+        <div class="customer-card">
+          <div><strong>CPF:</strong> 654.123.789-00</div>
+          <div><strong>Nome:</strong> Lucas Alves</div>
+          <div><strong>Email:</strong> lucas@email.com</div>
+          <div><strong>Telefone:</strong> (41) 92345-6789</div>
+          <div class="actions">
+            <button class="btn-icon" title="Editar">
+              <i class="fas fa-edit"></i>
+            </button>
+            <button class="btn-icon" title="Desativar">
+              <i class="fas fa-user-slash"></i>
+            </button>
+          </div>
+        </div>
+  
+        <div class="customer-card">
+          <div><strong>CPF:</strong> 789.123.456-00</div>
+          <div><strong>Nome:</strong> Carla Mendes</div>
+          <div><strong>Email:</strong> carla@email.com</div>
+          <div><strong>Telefone:</strong> (71) 93456-7890</div>
+          <div class="actions">
+            <button class="btn-icon" title="Editar">
+              <i class="fas fa-edit"></i>
+            </button>
+            <button class="btn-icon" title="Desativar">
+              <i class="fas fa-user-slash"></i>
+            </button>
+          </div>
+        </div>
+  
+        <div class="customer-card desativado">
+          <div><strong>CPF:</strong> 456.789.123-00</div>
+          <div><strong>Nome:</strong> Pedro Rocha</div>
+          <div><strong>Email:</strong> pedro@email.com</div>
+          <div><strong>Telefone:</strong> (61) 91234-5678</div>
+          <div class="actions">
+            <button class="btn-icon" title="Editar">
+              <i class="fas fa-edit"></i>
+            </button>
+            <button class="btn-icon" title="Desativar">
+              <i class="fas fa-user-slash"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  <footer>
+    <div id="footer-container"></div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/customer.js"></script>
+
+</body>
+</html>
