@@ -1,47 +1,387 @@
-# Arquivo: D:/Dev/Projetos/grupo05.cotacao.automovel\footer.html
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/user_detail.html:Zone.Identifier
+
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/dashboard.html:Zone.Identifier
+
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/quotation_detail.html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Detalhes da Cotação</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/customer.css" />
+  <link rel="stylesheet" href="css/user.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script defer src="js/main.js"></script>
+  <script defer src="js/quotation.js"></script>
+</head>
+<body>
+  <header>
+    <div id="header-container"></div>
+  </header>
+
+  <main class="main-scroll">
+    <section class="customer-list">
+      <div class="list-header">
+        <h2>Detalhes da Cotação</h2>
+      </div>
+
+      <div class="form-container">
+        <form class="user-form">
+
+        <div class="form-group">
+            <label>Cliente</label>
+            <input type="text" value="João Silva - CPF: 123.456.789-00" disabled />
+            <!-- Campos ocultos para submissão do formulário -->
+            <input type="hidden" name="cliente_nome" value="João Silva" />
+            <input type="hidden" name="cliente_cpf" value="123.456.789-00" />
+        </div>
+
+          <div class="form-group">
+            <label for="data_solicitacao">Data da Solicitação</label>
+            <input type="date" id="data_solicitacao" name="data_solicitacao" required />
+          </div>
+
+          <div class="form-group">
+            <label for="produto">Produto</label>
+            <input type="text" id="produto" name="produto" value="Automóvel" disabled />
+          </div>
+
+          <div class="form-group">
+            <label for="placa">Placa</label>
+            <input type="text" id="placa" name="placa" required />
+          </div>
+
+          <div class="form-group">
+            <label for="chassi">Chassi</label>
+            <input type="text" id="chassi" name="chassi" required />
+          </div>
+
+          <div class="form-group">
+            <label for="marca">Marca</label>
+            <input type="text" id="marca" name="marca" required />
+          </div>
+
+          <div class="form-group">
+            <label for="modelo">Modelo</label>
+            <input type="text" id="modelo" name="modelo" required />
+          </div>
+
+          <div class="form-group">
+            <label for="ano">Ano</label>
+            <input type="number" id="ano" name="ano" required />
+          </div>
+
+          <!-- Questionário -->
+          <fieldset class="fieldset-box">
+            <legend>Tipo de Seguro</legend>
+            <label><input type="radio" name="tipo_seguro" value="Novo seguro"> Novo seguro</label><br>
+            <label><input type="radio" name="tipo_seguro" value="Renovação de seguro"> Renovação de seguro</label><br>
+            <label>Classe de bônus:<br><input type="text" name="classe_bonus"></label><br>
+            <label>Houve sinistros?
+              <input type="radio" name="sinistro" value="Sim"> Sim
+              <input type="radio" name="sinistro" value="Não"> Não
+            </label>
+          </fieldset>
+
+          <fieldset class="fieldset-box">
+            <legend>Informações Pessoais</legend>
+            <label>Nome Completo:<br><input type="text" name="nome_completo"></label><br>
+            <label>CPF:<br><input type="text" name="cpf"></label><br>
+            <label>Data de Nascimento:<br><input type="date" name="data_nascimento"></label><br>
+            <label>Estado Civil:<br>
+              <select name="estado_civil">
+                <option value="Solteiro(a)">Solteiro(a)</option>
+                <option value="Casado(a)">Casado(a)</option>
+                <option value="Divorciado(a)">Divorciado(a)</option>
+                <option value="Viúvo(a)">Viúvo(a)</option>
+                <option value="União Estável">União Estável</option>
+              </select>
+            </label><br>
+            <label>Endereço Completo:<br><input type="text" name="endereco_completo"></label><br>
+            <label>Telefone:<br><input type="tel" name="telefone"></label><br>
+            <label>E-mail:<br><input type="email" name="email"></label>
+          </fieldset>
+
+          <fieldset class="fieldset-box">
+            <legend>Informações sobre o Veículo</legend>
+            <label>Marca: <input type="text" name="marca_veic"></label><br>
+            <label>Modelo: <input type="text" name="modelo_veic"></label><br>
+            <label>Ano de Fabricação: <input type="text" name="ano_fabricacao"></label><br>
+            <label>Placa: <input type="text" name="placa_veic"></label><br>
+            <label>Chassi: <input type="text" name="chassi_veic"></label><br>
+            <label>Tipo de uso:<br>
+              <input type="checkbox" name="uso_veiculo" value="Trabalho"> Trabalho<br>
+              <input type="checkbox" name="uso_veiculo" value="Escola"> Escola<br>
+              <input type="checkbox" name="uso_veiculo" value="Esporádico"> Esporádico
+            </label><br>
+            <label>Endereço do Pernoite (CEP):<br><input type="text" name="cep_pernoite"></label><br>
+            <label>Garagem no pernoite?
+              <input type="radio" name="garagem_pernoite" value="Sim"> Sim
+              <input type="radio" name="garagem_pernoite" value="Não"> Não
+            </label><br>
+            <label>Garagem no trabalho/escola?
+              <input type="radio" name="garagem_trabalho" value="Sim"> Sim
+              <input type="radio" name="garagem_trabalho" value="Não"> Não
+            </label>
+          </fieldset>
+
+          <fieldset class="fieldset-box">
+            <legend>Informações sobre o Condutor</legend>
+            <label>Idade: <input type="text" name="idade"></label><br>
+            <label>Tempo de Habilitação: <input type="text" name="tempo_habilitacao"></label>
+          </fieldset>
+
+          <fieldset class="fieldset-box">
+            <legend>Coberturas Desejadas</legend>
+            <label><input type="checkbox" name="cobertura" value="Básica"> Básica</label><br>
+            <label><input type="checkbox" name="cobertura" value="Completa"> Completa</label><br>
+            <label><input type="checkbox" name="cobertura" value="Terceiros"> Cobertura de terceiros</label><br>
+            <label><input type="checkbox" name="cobertura" value="Passageiros"> Cobertura para passageiros</label><br>
+            <label><input type="checkbox" name="cobertura" value="Roubo/Furto"> Proteção contra roubo, furto, incêndio</label><br>
+            <label><input type="checkbox" name="cobertura" value="Assistência"> Assistência 24h</label><br>
+            <label>Preferência por seguradora?
+              <input type="radio" name="preferencia" value="Sim"> Sim
+              <input type="radio" name="preferencia" value="Não"> Não
+            </label><br>
+            <label>Se sim, qual? <input type="text" name="seguradora_nome"></label>
+          </fieldset>
+
+          <div class="form-actions">
+            <button type="submit" class="btn-add">
+              <i class="fas fa-save"></i> Salvar Cotação
+            </button>
+            <button type="button" class="btn-cancel">
+              <i class="fas fa-arrow-left"></i> Voltar
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div id="footer-container"></div>
+  </footer>
+</body>
+</html>
+
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/footer.html
 <footer class="site-footer">
     <p>&copy; 2025 Grupo05 Seguros. Todos os direitos reservados.</p>
 </footer>
   
 
-# Arquivo: D:/Dev/Projetos/grupo05.cotacao.automovel\header.html
-<header class="site-header">
-    <div class="header-content">
-      <!-- Logo (invisível por enquanto) -->
-      <div class="logo" style="visibility: hidden;">Logo</div>
-  
-      <!-- Título -->
-      <h1 class="site-title">Grupo05</h1>
-  
-      <!-- Botão menu mobile -->
-      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu mobile">
-        &#9776;
-      </button>
-  
-      <!-- Menu desktop -->
-      <nav class="desktop-menu">
-        <ul>
-          <li><a href="#" class="active">Home</a></li>
-          <li><a href="#">Usuários</a></li>
-          <li><a href="#">Clientes</a></li>
-          <li><a href="#">Cotações</a></li>
-        </ul>
-      </nav>
-    </div>
-  
-    <!-- Menu mobile -->
-    <nav class="mobile-menu" id="mobileMenu">
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Usuários</a></li>
-        <li><a href="#">Clientes</a></li>
-        <li><a href="#">Cotações</a></li>
-      </ul>
-    </nav>
-  </header>
-  
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/quotation_list.html:Zone.Identifier
 
-# Arquivo: D:/Dev/Projetos/grupo05.cotacao.automovel\login.html
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/quotation_list.html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pedidos de Cotação</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/customer.css" />
+  <link rel="stylesheet" href="css/quotation.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script defer src="js/main.js"></script>
+  <script defer src="js/quotation.js"></script>
+</head>
+<body>
+  <header>
+    <div id="header-container"></div>
+  </header>
+
+  <main class="main-scroll">
+    <section class="customer-list">
+      <div class="list-header">
+        <h2>Cotações</h2>
+        <button class="btn-add">
+          <i class="fas fa-file-circle-plus"></i> Nova Cotação
+        </button>
+      </div>
+
+      <div class="card-container">
+
+        <!-- Card 1 -->
+        <div class="customer-card">
+          <h3>João Silva</h3>
+          <p>Email: joao@email.com</p>
+          <p>CPF: 123.456.789-00</p>
+          <br>
+          <p><strong>Produto:</strong> Automóvel</p>
+          <p><strong>Data:</strong> 10/04/2025</p>
+          <p><strong>Placa:</strong> ABC1D23</p>
+          <p><strong>Chassi:</strong> 9BWZZZ377VT004251</p>
+          <p><strong>Marca:</strong> Volkswagen</p>
+          <p><strong>Modelo:</strong> Gol</p>
+          <p><strong>Ano:</strong> 2015</p>
+          <div class="actions">
+            <button class="btn-icon" title="Editar">
+              <i class="fas fa-edit"></i>
+            </button>
+            <button class="btn-icon" title="Desativar">
+              <i class="fas fa-user-slash"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="customer-card">
+          <h3>Ana Paula</h3>
+          <p>Email: ana@email.com</p>
+          <p>CPF: 987.654.321-00</p>
+          <br>
+          <p><strong>Produto:</strong> Automóvel</p>
+          <p><strong>Data:</strong> 11/04/2025</p>
+          <p><strong>Placa:</strong> XYZ9K88</p>
+          <p><strong>Chassi:</strong> 1HGCM82633A123456</p>
+          <p><strong>Marca:</strong> Honda</p>
+          <p><strong>Modelo:</strong> Civic</p>
+          <p><strong>Ano:</strong> 2020</p>
+          <div class="actions">
+            <button class="btn-icon" title="Editar">
+              <i class="fas fa-edit"></i>
+            </button>
+            <button class="btn-icon" title="Desativar">
+              <i class="fas fa-user-slash"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="customer-card">
+          <h3>Carlos Mendes</h3>
+          <p>Email: carlos@email.com</p>
+          <p>CPF: 321.654.987-00</p>
+          <br>
+          <p><strong>Produto:</strong> Automóvel</p>
+          <p><strong>Data:</strong> 12/04/2025</p>
+          <p><strong>Placa:</strong> DEF2H56</p>
+          <p><strong>Chassi:</strong> 3VWFE21C04M000001</p>
+          <p><strong>Marca:</strong> Fiat</p>
+          <p><strong>Modelo:</strong> Uno</p>
+          <p><strong>Ano:</strong> 2012</p>
+          <div class="actions">
+            <button class="btn-icon" title="Editar">
+              <i class="fas fa-edit"></i>
+            </button>
+            <button class="btn-icon" title="Desativar">
+              <i class="fas fa-user-slash"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="customer-card">
+          <h3>Luciana Braga</h3>
+          <p>Email: luciana@email.com</p>
+          <p>CPF: 456.789.123-00</p>
+          <br>
+          <p><strong>Produto:</strong> Automóvel</p>
+          <p><strong>Data:</strong> 12/04/2025</p>
+          <p><strong>Placa:</strong> GHI3J76</p>
+          <p><strong>Chassi:</strong> 2HGFG12698H123456</p>
+          <p><strong>Marca:</strong> Toyota</p>
+          <p><strong>Modelo:</strong> Corolla</p>
+          <p><strong>Ano:</strong> 2019</p>
+          <div class="actions">
+            <button class="btn-icon" title="Editar">
+              <i class="fas fa-edit"></i>
+            </button>
+            <button class="btn-icon" title="Desativar">
+              <i class="fas fa-user-slash"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="customer-card">
+          <h3>Marcos Lima</h3>
+          <p>Email: marcos@email.com</p>
+          <p>CPF: 654.321.987-00</p>
+          <br>
+          <p><strong>Produto:</strong> Automóvel</p>
+          <p><strong>Data:</strong> 13/04/2025</p>
+          <p><strong>Placa:</strong> JKL4M89</p>
+          <p><strong>Chassi:</strong> JH4KA4650MC000000</p>
+          <p><strong>Marca:</strong> Chevrolet</p>
+          <p><strong>Modelo:</strong> Onix</p>
+          <p><strong>Ano:</strong> 2021</p>
+          <div class="actions">
+            <button class="btn-icon" title="Editar">
+              <i class="fas fa-edit"></i>
+            </button>
+            <button class="btn-icon" title="Desativar">
+              <i class="fas fa-user-slash"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="customer-card">
+          <h3>Fernanda Souza</h3>
+          <p>Email: fernanda@email.com</p>
+          <p>CPF: 789.123.456-00</p>
+          <br>
+          <p><strong>Produto:</strong> Automóvel</p>
+          <p><strong>Data:</strong> 13/04/2025</p>
+          <p><strong>Placa:</strong> MNO5P01</p>
+          <p><strong>Chassi:</strong> 5YJSA1CN5DFP00001</p>
+          <p><strong>Marca:</strong> Ford</p>
+          <p><strong>Modelo:</strong> Ka</p>
+          <p><strong>Ano:</strong> 2018</p>
+          <div class="actions">
+            <button class="btn-icon" title="Editar">
+              <i class="fas fa-edit"></i>
+            </button>
+            <button class="btn-icon" title="Desativar">
+              <i class="fas fa-user-slash"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div id="footer-container"></div>
+  </footer>
+</body>
+</html>
+
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/footer.html:Zone.Identifier
+
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/note:Zone.Identifier
+
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/note
+✅ Tela de perfil do usuário logado
+
+🚪 Botão de logout no dashboard ou no header
+
+✨ Adicionar nome do usuário logado no topo do dashboard
+
+📱 Melhorias de responsividade ou animações
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/info.php
+<?php
+phpinfo();
+
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/home.html:Zone.Identifier
+
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/login.html
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -117,10 +457,1530 @@
 </html>
 
 
-# Arquivo: D:/Dev/Projetos/grupo05.cotacao.automovel\source.txt
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/customer_list.html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lista de Clientes</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/customer.css">
+  
+
+</head>
+<body>
+
+  <header>
+    <div id="header-container"></div>
+  </header>
+
+  <main class="main-scroll">
+    <section class="customer-list">
+      <div class="list-header">
+        <h2>Lista de Clientes</h2>
+        <button class="btn-add" title="Adicionar cliente">
+          <i class="fas fa-user-plus"></i> Adicionar
+        </button>
+      </div>
+  
+      <div class="card-container">
+        <!-- Card 1 -->
+        <div class="customer-card">
+          <div><strong>CPF:</strong> 123.456.789-00</div>
+          <div><strong>Nome:</strong> João Silva</div>
+          <div><strong>Email:</strong> joao@email.com</div>
+          <div><strong>Telefone:</strong> (11) 98765-4321</div>
+          <div class="actions">
+            <button class="btn-icon" title="Editar">
+              <i class="fas fa-edit"></i>
+            </button>
+            <button class="btn-icon" title="Desativar">
+              <i class="fas fa-user-slash"></i>
+            </button>
+          </div>
+        </div>
+  
+        <!-- Card 2 -->
+        <div class="customer-card desativado">
+          <div><strong>CPF:</strong> 987.654.321-00</div>
+          <div><strong>Nome:</strong> Maria Souza</div>
+          <div><strong>Email:</strong> maria@email.com</div>
+          <div><strong>Telefone:</strong> (21) 91234-5678</div>
+          <div class="actions">
+            <button class="btn-icon" title="Editar">
+              <i class="fas fa-edit"></i>
+            </button>
+            <button class="btn-icon btn-toggle" title="Ativar">
+              <i class="fas fa-toggle-on"></i>
+            </button>
+          </div>
+        </div>
+  
+        <!-- Cards 3 a 6 -->
+        <div class="customer-card">
+          <div><strong>CPF:</strong> 321.654.987-00</div>
+          <div><strong>Nome:</strong> Ana Lima</div>
+          <div><strong>Email:</strong> ana@email.com</div>
+          <div><strong>Telefone:</strong> (31) 99876-1234</div>
+          <div class="actions">
+            <button class="btn-icon" title="Editar">
+              <i class="fas fa-edit"></i>
+            </button>
+            <button class="btn-icon" title="Desativar">
+              <i class="fas fa-user-slash"></i>
+            </button>
+          </div>
+        </div>
+  
+        <div class="customer-card">
+          <div><strong>CPF:</strong> 654.123.789-00</div>
+          <div><strong>Nome:</strong> Lucas Alves</div>
+          <div><strong>Email:</strong> lucas@email.com</div>
+          <div><strong>Telefone:</strong> (41) 92345-6789</div>
+          <div class="actions">
+            <button class="btn-icon" title="Editar">
+              <i class="fas fa-edit"></i>
+            </button>
+            <button class="btn-icon" title="Desativar">
+              <i class="fas fa-user-slash"></i>
+            </button>
+          </div>
+        </div>
+  
+        <div class="customer-card">
+          <div><strong>CPF:</strong> 789.123.456-00</div>
+          <div><strong>Nome:</strong> Carla Mendes</div>
+          <div><strong>Email:</strong> carla@email.com</div>
+          <div><strong>Telefone:</strong> (71) 93456-7890</div>
+          <div class="actions">
+            <button class="btn-icon" title="Editar">
+              <i class="fas fa-edit"></i>
+            </button>
+            <button class="btn-icon" title="Desativar">
+              <i class="fas fa-user-slash"></i>
+            </button>
+          </div>
+        </div>
+  
+        <div class="customer-card desativado">
+          <div><strong>CPF:</strong> 456.789.123-00</div>
+          <div><strong>Nome:</strong> Pedro Rocha</div>
+          <div><strong>Email:</strong> pedro@email.com</div>
+          <div><strong>Telefone:</strong> (61) 91234-5678</div>
+          <div class="actions">
+            <button class="btn-icon" title="Editar">
+              <i class="fas fa-edit"></i>
+            </button>
+            <button class="btn-icon" title="Desativar">
+              <i class="fas fa-user-slash"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
 
-# Arquivo: D:/Dev/Projetos/grupo05.cotacao.automovel\css\main.css
+  <footer>
+    <div id="footer-container"></div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/customer.js"></script>
+
+</body>
+</html>
+
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/home.html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bem-vindo</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/home.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script defer src="js/main.js"></script>
+</head>
+<body>
+  <header>
+    <div id="header-container"></div>
+  </header>
+
+  <main class="main-scroll">
+    <section class="home-options">
+      <h1 class="home-title">Bem-vindo</h1>
+      <p class="home-subtitle">Escolha uma das opções abaixo:</p>
+
+      <div class="home-buttons">
+        <a href="quotation_detail.html" class="home-btn">
+            <i class="fas fa-file-signature"></i> Nova Cotação
+          </a>        
+        <a href="login.html" class="home-btn">
+          <i class="fas fa-sign-in-alt"></i> Fazer Login
+        </a>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div id="footer-container"></div>
+  </footer>
+</body>
+</html>
+
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/header.html:Zone.Identifier
+
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/index.html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bem-vindo</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/home.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script defer src="js/main.js"></script>
+</head>
+<body>
+  <header>
+    <div id="header-container"></div>
+  </header>
+
+  <main class="main-scroll">
+    <section class="home-options">
+      <h1 class="home-title">Bem-vindo</h1>
+      <p class="home-subtitle">Escolha uma das opções abaixo:</p>
+
+      <div class="home-buttons">
+        <a href="quotation_detail.html" class="home-btn">
+            <i class="fas fa-file-signature"></i> Nova Cotação
+          </a>        
+        <a href="login.html" class="home-btn">
+          <i class="fas fa-sign-in-alt"></i> Fazer Login
+        </a>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div id="footer-container"></div>
+  </footer>
+</body>
+</html>
+
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/user_list.html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="google" content="notranslate">
+  <title>Manutenção de Usuários</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/customer.css" />
+  <link rel="stylesheet" href="css/user.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script defer src="js/main.js"></script>
+  <script defer src="js/user.js"></script>
+</head>
+<body>
+
+  <header>
+    <div id="header-container"></div>
+  </header>
+
+  <main class="main-scroll">
+    <section class="customer-list">
+      <div class="list-header">
+        <h2>Usuários</h2>
+        <button class="btn-add">
+          <i class="fas fa-user-plus"></i> Adicionar Usuário
+        </button>
+      </div>
+
+      <div class="card-container">
+
+        <!-- Usuário 1 -->
+        <div class="customer-card">
+          <h3>João da Silva</h3>
+          <p>Email: joao@exemplo.com</p>
+          <p>CPF: 123.456.789-00</p>
+          <p>Perfil: <span class="perfil admin">Admin</span></p>
+          <div class="actions">
+            <button class="btn-icon" title="Editar">
+              <i class="fas fa-edit"></i>
+            </button>
+            <button class="btn-icon" title="Desativar">
+              <i class="fas fa-user-slash"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Usuário 2 (desativado) -->
+        <div class="customer-card desativado">
+          <h3>Maria Oliveira</h3>
+          <p>Email: maria@exemplo.com</p>
+          <p>CPF: 234.567.890-11</p>
+          <p>Perfil: <span class="perfil atendente">Atendente</span></p>
+          <div class="actions">
+            <button class="btn-icon" title="Editar">
+              <i class="fas fa-edit"></i>
+            </button>
+            <button class="btn-icon" title="Ativar">
+              <i class="fas fa-user-check"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Usuário 3 -->
+        <div class="customer-card">
+          <h3>Lucas Pereira</h3>
+          <p>Email: lucas@exemplo.com</p>
+          <p>CPF: 345.678.901-22</p>
+          <p>Perfil: <span class="perfil cliente">Cliente</span></p>
+          <div class="actions">
+            <button class="btn-icon" title="Editar">
+              <i class="fas fa-edit"></i>
+            </button>
+            <button class="btn-icon" title="Desativar">
+              <i class="fas fa-user-slash"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Usuário 4 -->
+        <div class="customer-card">
+          <h3>Fernanda Lima</h3>
+          <p>Email: fernanda@exemplo.com</p>
+          <p>CPF: 456.789.012-33</p>
+          <p>Perfil: <span class="perfil admin">Admin</span></p>
+          <div class="actions">
+            <button class="btn-icon" title="Editar">
+              <i class="fas fa-edit"></i>
+            </button>
+            <button class="btn-icon" title="Desativar">
+              <i class="fas fa-user-slash"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Usuário 5 -->
+        <div class="customer-card">
+          <h3>Paulo Souza</h3>
+          <p>Email: paulo@exemplo.com</p>
+          <p>CPF: 567.890.123-44</p>
+          <p>Perfil: <span class="perfil atendente">Atendente</span></p>
+          <div class="actions">
+            <button class="btn-icon" title="Editar">
+              <i class="fas fa-edit"></i>
+            </button>
+            <button class="btn-icon" title="Desativar">
+              <i class="fas fa-user-slash"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Usuário 6 (desativado) -->
+        <div class="customer-card desativado">
+          <h3>Ana Costa</h3>
+          <p>Email: ana@exemplo.com</p>
+          <p>CPF: 678.901.234-55</p>
+          <p>Perfil: <span class="perfil cliente">Cliente</span></p>
+          <div class="actions">
+            <button class="btn-icon" title="Editar">
+              <i class="fas fa-edit"></i>
+            </button>
+            <button class="btn-icon" title="Ativar">
+              <i class="fas fa-user-check"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div id="footer-container"></div>
+  </footer>
+
+</body>
+</html>
+
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/header.html
+<header class="site-header">
+    <div class="header-content">
+      <!-- Logo (invisível por enquanto) -->
+      <div class="logo" style="visibility: hidden;">Logo</div>
+  
+      <!-- Título -->
+      <h1 class="site-title">Grupo05</h1>
+  
+      <!-- Botão menu mobile -->
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu mobile">
+        &#9776;
+      </button>
+  
+      <!-- Menu desktop -->
+      <nav class="desktop-menu">
+        <ul>
+          <li><a href="#" class="active">Home</a></li>
+          <li><a href="#">Usuários</a></li>
+          <li><a href="#">Clientes</a></li>
+          <li><a href="#">Cotações</a></li>
+        </ul>
+      </nav>
+    </div>
+  
+    <!-- Menu mobile -->
+    <nav class="mobile-menu" id="mobileMenu">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Usuários</a></li>
+        <li><a href="#">Clientes</a></li>
+        <li><a href="#">Cotações</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/login.html:Zone.Identifier
+
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/dashboard.html
+<!DOCTYPE html>
+<html lang="pt-BR" translate="no"></html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script defer src="js/main.js"></script>
+</head>
+<body>
+  <header>
+    <div id="header-container"></div>
+  </header>
+
+  <main class="main-scroll">
+    <section class="dashboard-section">
+      <h2 class="dashboard-title">Painel Administrativo</h2>
+      <div class="dashboard-options">
+        <a href="user_list.html" class="dashboard-card">
+          <i class="fas fa-users-cog"></i>
+          <span>Usuários</span>
+        </a>
+
+        <a href="customer_list.html" class="dashboard-card">
+          <i class="fas fa-user-friends"></i>
+          <span>Clientes</span>
+        </a>
+
+        <a href="quotation_list.html" class="dashboard-card">
+          <i class="fas fa-file-invoice-dollar"></i>
+          <span>Cotações</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div id="footer-container"></div>
+  </footer>
+</body>
+</html>
+
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/user_detail.html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Detalhes do Usuário</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/customer.css" />
+  <link rel="stylesheet" href="css/user.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script defer src="js/main.js"></script>
+  <script defer src="js/user.js"></script>
+</head>
+<body>
+  <header>
+    <div id="header-container"></div>
+  </header>
+
+  <main class="main-scroll">
+    <section class="customer-list">
+      <div class="list-header">
+        <h2>Detalhes do Usuário</h2>
+      </div>
+
+      <div class="form-container">
+        <form class="user-form">
+          <div class="form-group">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" required value="João Silva" />
+          </div>
+
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" required value="joao@email.com" />
+          </div>
+
+          <div class="form-group">
+            <label for="cpf">CPF</label>
+            <input type="text" id="cpf" name="cpf" required value="123.456.789-00" />
+          </div>
+
+          <div class="form-group">
+            <label for="perfil">Perfil</label>
+            <select id="perfil" name="perfil" required>
+              <option value="admin" selected>Admin</option>
+              <option value="atendente">Atendente</option>
+              <option value="cliente">Cliente</option>
+            </select>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn-add">
+              <i class="fas fa-save"></i> Salvar
+            </button>
+            <button type="button" class="btn-cancel">
+              <i class="fas fa-arrow-left"></i> Voltar
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div id="footer-container"></div>
+  </footer>
+</body>
+</html>
+
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/index.html:Zone.Identifier
+
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/customer_detail.html:Zone.Identifier
+
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/user_list.html:Zone.Identifier
+
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/info.php:Zone.Identifier
+
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/customer_detail.html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Detalhes do Cliente</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/customer.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script defer src="js/main.js"></script>
+  <script defer src="js/customer.js"></script>
+</head>
+<body>
+  <header>
+    <div id="header-container"></div>
+  </header>
+
+  <main>
+    <section class="customer-list">
+      <div class="list-header">
+        <h2>Detalhes do Cliente</h2>
+      </div>
+
+      <div class="form-container">
+        <form class="user-form">
+          <div class="form-group w-full">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" required />
+          </div>
+
+          <div class="form-group w-70">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+
+          <div class="form-group w-30">
+            <label for="estrangeiro">Você é estrangeiro?</label>
+            <select id="estrangeiro" name="estrangeiro" required>
+              <option value="nao" selected>Não</option>
+              <option value="sim">Sim</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group w-50" id="cpf-container">
+              <label for="cpf">CPF</label>
+              <input type="text" id="cpf" name="cpf" />
+            </div>
+
+            <div class="form-group w-50" id="rnm-container" style="display: none;">
+              <label for="rnm">Número do RNM</label>
+              <input type="text" id="rnm" name="rnm" />
+            </div>
+          </div>
+
+          <div class="form-group w-40">
+            <label for="nascimento">Data de Nascimento</label>
+            <input type="date" id="nascimento" name="nascimento" required />
+          </div>
+
+          <div class="form-group w-40">
+            <label for="cep">CEP</label>
+            <input type="text" id="cep" name="cep" required />
+          </div>
+
+          <div class="form-group w-full">
+            <label for="rua">Rua</label>
+            <input type="text" id="rua" name="rua" required />
+          </div>
+
+          <div class="form-row">
+            <div class="form-group w-30">
+              <label for="numero">Número</label>
+              <input type="text" id="numero" name="numero" required />
+            </div>
+
+            <div class="form-group w-70">
+              <label for="complemento">Complemento</label>
+              <input type="text" id="complemento" name="complemento" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group w-60">
+              <label for="bairro">Bairro</label>
+              <input type="text" id="bairro" name="bairro" required />
+            </div>
+
+            <div class="form-group w-40">
+              <label for="cidade">Cidade</label>
+              <input type="text" id="cidade" name="cidade" required />
+            </div>
+          </div>
+
+          <div class="form-group w-30">
+            <label for="estado">Estado</label>
+            <select id="estado" name="estado" required>
+              <option value="" disabled selected>Selecione</option>
+              <option value="estrangeiro">Estrangeiro</option>
+              <option value="AC">Acre</option>
+              <option value="AL">Alagoas</option>
+              <option value="AP">Amapá</option>
+              <option value="AM">Amazonas</option>
+              <option value="BA">Bahia</option>
+              <option value="CE">Ceará</option>
+              <option value="DF">Distrito Federal</option>
+              <option value="ES">Espírito Santo</option>
+              <option value="GO">Goiás</option>
+              <option value="MA">Maranhão</option>
+              <option value="MT">Mato Grosso</option>
+              <option value="MS">Mato Grosso do Sul</option>
+              <option value="MG">Minas Gerais</option>
+              <option value="PA">Pará</option>
+              <option value="PB">Paraíba</option>
+              <option value="PR">Paraná</option>
+              <option value="PE">Pernambuco</option>
+              <option value="PI">Piauí</option>
+              <option value="RJ">Rio de Janeiro</option>
+              <option value="RN">Rio Grande do Norte</option>
+              <option value="RS">Rio Grande do Sul</option>
+              <option value="RO">Rondônia</option>
+              <option value="RR">Roraima</option>
+              <option value="SC">Santa Catarina</option>
+              <option value="SP">São Paulo</option>
+              <option value="SE">Sergipe</option>
+              <option value="TO">Tocantins</option>
+            </select>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn-add">
+              <i class="fas fa-save"></i> Salvar
+            </button>
+            <button type="button" class="btn-cancel">
+              <i class="fas fa-arrow-left"></i> Voltar
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div id="footer-container"></div>
+  </footer>
+
+  <script>
+    // Alterna CPF/RNM com base na seleção estrangeiro
+    document.addEventListener("DOMContentLoaded", () => {
+      const select = document.getElementById("estrangeiro");
+      const cpfContainer = document.getElementById("cpf-container");
+      const rnmContainer = document.getElementById("rnm-container");
+
+      function toggleDocumentos() {
+        if (select.value === "sim") {
+          cpfContainer.style.display = "none";
+          rnmContainer.style.display = "block";
+        } else {
+          cpfContainer.style.display = "block";
+          rnmContainer.style.display = "none";
+        }
+      }
+
+      select.addEventListener("change", toggleDocumentos);
+      toggleDocumentos(); // chama ao carregar
+    });
+  </script>
+</body>
+</html>
+
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/customer_list.html:Zone.Identifier
+
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/quotation_detail.html:Zone.Identifier
+
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/js/main.js:Zone.Identifier
+
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/js/customer.js
+document.addEventListener('DOMContentLoaded', () => {
+    const table = document.querySelector('.customer-table');
+  
+    if (table) {
+      table.addEventListener('click', (e) => {
+        if (e.target.classList.contains('btn-deactivate')) {
+          const row = e.target.closest('tr');
+          row.classList.toggle('inactive');
+          e.target.textContent = row.classList.contains('inactive') ? 'Ativar' : 'Desativar';
+        }
+  
+        if (e.target.classList.contains('btn-edit')) {
+          const customerId = e.target.dataset.id;
+          window.location.href = `customer_detail.html?id=${customerId}`;
+        }
+      });
+    }
+  
+    const addBtn = document.querySelector('.add-customer-btn');
+    if (addBtn) {
+      addBtn.addEventListener('click', () => {
+        window.location.href = 'customer_detail.html';
+      });
+    }
+
+    const toggleButton = card.querySelector('.btn-toggle');
+const icon = toggleButton.querySelector('i');
+
+if (card.classList.contains('desativado')) {
+  icon.classList.remove('fa-toggle-off');
+  icon.classList.add('fa-toggle-on');
+  toggleButton.title = 'Ativar';
+} else {
+  icon.classList.remove('fa-toggle-on');
+  icon.classList.add('fa-toggle-off');
+  toggleButton.title = 'Desativar';
+}
+  });
+  
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/js/main.js
+document.addEventListener('DOMContentLoaded', () => {
+    // Carregar header e footer
+    fetch('header.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('header-container').innerHTML = data;
+        initMobileMenu(); // Inicializa o menu após carregar o header
+      });
+  
+    fetch('footer.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('footer-container').innerHTML = data;
+      });
+  
+    // Mostrar/Ocultar senha
+    const togglePassword = document.getElementById('togglePassword');
+    const passwordInput = document.getElementById('password');
+  
+    if (togglePassword && passwordInput) {
+      togglePassword.addEventListener('click', () => {
+        const isPassword = passwordInput.type === 'password';
+        passwordInput.type = isPassword ? 'text' : 'password';
+  
+        const icon = togglePassword.querySelector('i');
+        if (icon) {
+          icon.classList.toggle('fa-eye');
+          icon.classList.toggle('fa-eye-slash');
+        }
+      });
+    }
+  
+    // Validação do formulário
+    const loginForm = document.getElementById('login-form');
+    if (loginForm) {
+      loginForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+  
+        const identifier = document.getElementById('identifier');
+        const password = document.getElementById('password');
+        let valid = true;
+  
+        // Resetar estilos e mensagens
+        [identifier, password].forEach(input => {
+          input.classList.remove('is-invalid', 'is-valid');
+          const errorMsg = input.nextElementSibling;
+          if (errorMsg && errorMsg.classList.contains('error-message')) {
+            errorMsg.remove();
+          }
+        });
+  
+        // Validar identificador
+        if (!identifier.value || (!identifier.value.includes('@') && !/^\d{11}$/.test(identifier.value.replace(/\D/g, '')))) {
+          identifier.classList.add('is-invalid');
+          showError(identifier, 'Informe um e-mail válido ou CPF com 11 dígitos.');
+          valid = false;
+        } else {
+          identifier.classList.add('is-valid');
+        }
+  
+        // Validar senha
+        if (!password.value || password.value.length < 6) {
+          password.classList.add('is-invalid');
+          showError(password, 'A senha deve ter pelo menos 6 caracteres.');
+          valid = false;
+        } else {
+          password.classList.add('is-valid');
+        }
+  
+        if (valid) {
+          console.log('Login válido!');
+          setTimeout(() => {
+            alert('Login realizado com sucesso!');
+            // window.location.href = 'dashboard.html';
+          }, 1000);
+        }
+      });
+    }
+  
+    // Exibir mensagem de erro
+    function showError(input, message) {
+      const error = document.createElement('div');
+      error.classList.add('error-message');
+      error.textContent = message;
+      input.parentNode.appendChild(error);
+    }
+  });
+  
+  // Função de menu mobile (fora do DOMContentLoaded para funcionar após fetch)
+  function initMobileMenu() {
+    const toggleButton = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+  
+    if (toggleButton && mobileMenu) {
+      toggleButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('show');
+      });
+    }
+  }
+  
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/js/user.js:Zone.Identifier
+
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/js/customer.js:Zone.Identifier
+
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/js/user.js
+// scripts/user.js
+
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('Página de usuários carregada');
+    // Aqui você pode carregar os usuários via fetch e gerar os cards dinamicamente.
+  });
+  
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/docs/prototipo/2024-04-13/mobile/quotation_list.jpeg
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/docs/prototipo/2024-04-13/mobile/login.jpeg:Zone.Identifier
+
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/docs/prototipo/2024-04-13/mobile/quotation_list.jpeg:Zone.Identifier
+
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/docs/prototipo/2024-04-13/mobile/user_list.jpeg:Zone.Identifier
+
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/docs/prototipo/2024-04-13/mobile/home.jpeg:Zone.Identifier
+
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/docs/prototipo/2024-04-13/mobile/dashboard.jpeg
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/docs/prototipo/2024-04-13/mobile/login.jpeg
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/docs/prototipo/2024-04-13/mobile/quotation_detail.jpeg
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/docs/prototipo/2024-04-13/mobile/customer_detail.jpeg:Zone.Identifier
+
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/docs/prototipo/2024-04-13/mobile/user_detail.jpeg
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/docs/prototipo/2024-04-13/mobile/home.jpeg
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/docs/prototipo/2024-04-13/mobile/user_detail.jpeg:Zone.Identifier
+
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/docs/prototipo/2024-04-13/mobile/user_list.jpeg
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/docs/prototipo/2024-04-13/mobile/customer_list.jpeg:Zone.Identifier
+
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/docs/prototipo/2024-04-13/mobile/customer_detail.jpeg
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/docs/prototipo/2024-04-13/mobile/dashboard.jpeg:Zone.Identifier
+
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/docs/prototipo/2024-04-13/mobile/customer_list.jpeg
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/docs/prototipo/2024-04-13/mobile/quotation_detail.jpeg:Zone.Identifier
+
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/docs/prototipo/2024-04-13/desktop/quotation_list.jpeg
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/docs/prototipo/2024-04-13/desktop/login.jpeg:Zone.Identifier
+
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/docs/prototipo/2024-04-13/desktop/quotation_list.jpeg:Zone.Identifier
+
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/docs/prototipo/2024-04-13/desktop/user_list.jpeg:Zone.Identifier
+
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/docs/prototipo/2024-04-13/desktop/home.jpeg:Zone.Identifier
+
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/docs/prototipo/2024-04-13/desktop/dashboard.jpeg
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/docs/prototipo/2024-04-13/desktop/login.jpeg
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/docs/prototipo/2024-04-13/desktop/quotation_detail.jpeg
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/docs/prototipo/2024-04-13/desktop/customer_detail.jpeg:Zone.Identifier
+
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/docs/prototipo/2024-04-13/desktop/user_detail.jpeg
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/docs/prototipo/2024-04-13/desktop/home.jpeg
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/docs/prototipo/2024-04-13/desktop/user_detail.jpeg:Zone.Identifier
+
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/docs/prototipo/2024-04-13/desktop/user_list.jpeg
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/docs/prototipo/2024-04-13/desktop/customer_list.jpeg:Zone.Identifier
+
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/docs/prototipo/2024-04-13/desktop/customer_detail.jpeg
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/docs/prototipo/2024-04-13/desktop/dashboard.jpeg:Zone.Identifier
+
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/docs/prototipo/2024-04-13/desktop/customer_list.jpeg
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/docs/prototipo/2024-04-13/desktop/quotation_detail.jpeg:Zone.Identifier
+
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/docs/desenhos/moscowxml
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0" version="26.2.12">
+  <diagram id="amfqkIsQV0Mo_VLNIuDX" name="Página-1">
+    <mxGraphModel dx="1380" dy="786" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="Matriz MoSCoW - Priorização de Funcionalidades" style="rounded=1;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="380" y="20" width="420" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="Must have (Obrigatório)" style="rounded=1;whiteSpace=wrap;html=1;align=center;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=16;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="50" y="150" width="220" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="Should have (Deveria ter)" style="rounded=1;whiteSpace=wrap;html=1;align=center;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=16;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="300" y="150" width="220" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="Could have (Poderia ter)" style="rounded=1;whiteSpace=wrap;html=1;align=center;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=16;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="550" y="150" width="220" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="Won&#39;t have (Não terá)" style="rounded=1;whiteSpace=wrap;html=1;align=center;fillColor=#f8cecc;strokeColor=#b85450;fontSize=16;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="800" y="150" width="220" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="Tela de cadastro de clientes com CPF como chave primária (e alternativa para estrangeiros por meio do Registro Nacional Migratório - RNM)." style="whiteSpace=wrap;html=1;rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;imageWidth=50;" parent="1" vertex="1">
+          <mxGeometry x="50" y="250" width="220" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="Formulário com questionário de risco e dados de cobertura." style="whiteSpace=wrap;html=1;rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;imageWidth=50;" parent="1" vertex="1">
+          <mxGeometry x="50" y="350" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="Tela de cotação de automóvel." style="whiteSpace=wrap;html=1;rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;imageWidth=50;" parent="1" vertex="1">
+          <mxGeometry x="50" y="450" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="Integração com sistemas de seguradoras para obtenção de cotações automatizadas." style="whiteSpace=wrap;html=1;rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;imageWidth=50;" parent="1" vertex="1">
+          <mxGeometry x="300" y="250" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="Sistema de notificação para lembrar os clientes sobre o vencimento das apólices." style="whiteSpace=wrap;html=1;rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;imageWidth=50;" parent="1" vertex="1">
+          <mxGeometry x="300" y="350" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="Relatórios básicos sobre o número de cotações realizadas e o número de seguros vendidos." style="whiteSpace=wrap;html=1;rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;imageWidth=50;" parent="1" vertex="1">
+          <mxGeometry x="300" y="450" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="Chatbot para responder a perguntas frequentes dos clientes." style="whiteSpace=wrap;html=1;rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;imageWidth=50;" parent="1" vertex="1">
+          <mxGeometry x="550" y="250" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="Sistema de recomendação de seguros com base no perfil do cliente." style="whiteSpace=wrap;html=1;rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;imageWidth=50;" parent="1" vertex="1">
+          <mxGeometry x="550" y="350" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="15" value="Integração com redes sociais para divulgação dos serviços da corretora." style="whiteSpace=wrap;html=1;rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;imageWidth=50;" parent="1" vertex="1">
+          <mxGeometry x="550" y="450" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="16" value="Aplicativo mobile para os clientes acessarem as informações sobre seus seguros." style="whiteSpace=wrap;html=1;rounded=1;fillColor=#f8cecc;strokeColor=#b85450;imageWidth=50;" parent="1" vertex="1">
+          <mxGeometry x="800" y="250" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="17" value="Sistema de gestão financeira da corretora." style="whiteSpace=wrap;html=1;rounded=1;fillColor=#f8cecc;strokeColor=#b85450;imageWidth=50;" parent="1" vertex="1">
+          <mxGeometry x="800" y="350" width="220" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
+
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/docs/desenhos/menu.drawio:Zone.Identifier
+
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/docs/desenhos/menu_v02.drawio
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0" version="26.2.9">
+  <diagram name="Página-1" id="0">
+    <mxGraphModel dx="1420" dy="786" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="Home" style="rounded=1;fillColor=#660033;fontColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="305" y="62" width="90" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="Login" style="rounded=1;fillColor=#1E90FF;fontColor=#ffffff;flipV=0;flipH=1;" parent="1" vertex="1">
+          <mxGeometry x="471" y="206" width="90" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="Dashboard" style="rounded=1;fillColor=#1E90FF;fontColor=#ffffff;flipV=0;flipH=1;" parent="1" vertex="1">
+          <mxGeometry x="471" y="311" width="90" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="Admin" style="group;fillColor=none;strokeColor=black;dashed=1;container=0;align=left;verticalAlign=bottom;" parent="1" vertex="1">
+          <mxGeometry x="178" y="433" width="300" height="207" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="Usuário e Cliente" style="group;fillColor=none;strokeColor=black;dashed=1;container=0;align=left;verticalAlign=bottom;" parent="1" vertex="1">
+          <mxGeometry x="502" y="433" width="300" height="207" as="geometry" />
+        </mxCell>
+        <mxCell id="14" style="edgeStyle=elbowEdgeStyle;elbow=vertical;endArrow=classic;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="2" target="3" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="450" y="130" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="520" y="140" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="15" style="edgeStyle=elbowEdgeStyle;elbow=vertical;endArrow=classic;" parent="1" source="3" target="4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="16" style="edgeStyle=elbowEdgeStyle;elbow=vertical;endArrow=classic;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="4" target="6" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="480" y="390" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="430" y="400" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="17" style="edgeStyle=elbowEdgeStyle;elbow=vertical;endArrow=classic;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="4" target="10" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="570" y="370" as="sourcePoint" />
+            <mxPoint x="585" y="464" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="550" y="400" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6" value="User List" style="rounded=1;fillColor=#87CEFA;fontColor=#ffffff;container=0;" parent="1" vertex="1">
+          <mxGeometry x="284" y="460" width="90" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="User Detail" style="rounded=1;fillColor=#87CEFA;fontColor=#ffffff;container=0;" parent="1" vertex="1">
+          <mxGeometry x="211" y="565" width="90" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="Pass Reset" style="rounded=1;fillColor=#87CEFA;fontColor=#ffffff;container=0;" parent="1" vertex="1">
+          <mxGeometry x="356" y="565" width="90" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="Customer List" style="rounded=1;fillColor=#FFA07A;fontColor=#ffffff;flipV=0;flipH=1;" parent="1" vertex="1">
+          <mxGeometry x="540" y="460" width="90" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="Customer Detail" style="rounded=1;fillColor=#FFA07A;fontColor=#ffffff;flipV=0;flipH=1;" parent="1" vertex="1">
+          <mxGeometry x="540" y="565" width="90" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="Quotation List" style="rounded=1;fillColor=#FFA07A;fontColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="685" y="460" width="90" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="Quotation Detail" style="rounded=1;fillColor=#FFA07A;fontColor=#ffffff;flipV=1;" parent="1" vertex="1">
+          <mxGeometry x="685" y="565" width="90" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="Y1dWdXbFzBG6Ow272o0q-35" value="Customer New" style="rounded=1;fillColor=#006600;fontColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="85" y="206" width="90" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="Y1dWdXbFzBG6Ow272o0q-36" value="Quotation New" style="rounded=1;fillColor=#006600;fontColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="214" y="206" width="90" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="Y1dWdXbFzBG6Ow272o0q-37" value="Novo Cliente" style="group;fillColor=none;strokeColor=black;dashed=1;container=0;align=left;verticalAlign=bottom;" parent="1" vertex="1">
+          <mxGeometry x="58" y="173" width="272" height="107" as="geometry" />
+        </mxCell>
+        <mxCell id="Y1dWdXbFzBG6Ow272o0q-39" style="edgeStyle=elbowEdgeStyle;elbow=vertical;endArrow=classic;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="2" target="Y1dWdXbFzBG6Ow272o0q-35" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="440" y="110" as="sourcePoint" />
+            <mxPoint x="610" y="192" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="280" y="140" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Y1dWdXbFzBG6Ow272o0q-40" style="edgeStyle=elbowEdgeStyle;elbow=vertical;endArrow=classic;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="Y1dWdXbFzBG6Ow272o0q-35" target="Y1dWdXbFzBG6Ow272o0q-36" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="445" y="117" as="sourcePoint" />
+            <mxPoint x="138" y="222" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5wmmDi2MOuHa2G2dn6J2-17" style="edgeStyle=elbowEdgeStyle;elbow=vertical;endArrow=classic;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="6" target="7">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="526" y="261" as="sourcePoint" />
+            <mxPoint x="526" y="321" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5wmmDi2MOuHa2G2dn6J2-19" style="edgeStyle=elbowEdgeStyle;elbow=vertical;endArrow=classic;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="6" target="8">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="266" y="515" as="sourcePoint" />
+            <mxPoint x="266" y="575" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5wmmDi2MOuHa2G2dn6J2-20" style="edgeStyle=elbowEdgeStyle;elbow=vertical;endArrow=classic;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="10" target="11">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="339" y="515" as="sourcePoint" />
+            <mxPoint x="266" y="575" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5wmmDi2MOuHa2G2dn6J2-21" style="edgeStyle=elbowEdgeStyle;elbow=vertical;endArrow=classic;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="12" target="13">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="595" y="515" as="sourcePoint" />
+            <mxPoint x="595" y="575" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5wmmDi2MOuHa2G2dn6J2-24" style="edgeStyle=elbowEdgeStyle;elbow=vertical;endArrow=classic;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="4" target="12">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="550.5" y="356" as="sourcePoint" />
+            <mxPoint x="619.5" y="460" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="584.5" y="400" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
+
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/docs/desenhos/moscow.jpg:Zone.Identifier
+
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/docs/desenhos/menu_v02.drawio:Zone.Identifier
+
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/docs/desenhos/moscow.jpg
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/docs/desenhos/menu.png
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/docs/desenhos/moscowxml:Zone.Identifier
+
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/docs/desenhos/menu_v01.drawio
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0" version="26.2.9">
+  <diagram id="_ziMa6V_oYhgSmaQkYBD" name="Página-1">
+    <mxGraphModel dx="1420" dy="786" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="Home" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0080ff;fontColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="360" y="40" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="customer_new" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0080ff;fontColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="159" y="175" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="quotation_new" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0080ff;fontColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="279" y="175" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="" style="group;rounded=1;fillColor=none;strokeColor=black;dashed=1;" parent="1" vertex="1">
+          <mxGeometry x="154" y="160" width="225" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="Dashboard" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0080ff;fontColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="488" y="278" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="user_list" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0080ff;fontColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="95" y="499" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="user_detail" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0080ff;fontColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="93" y="619" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="pass_reset" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0080ff;fontColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="316" y="499" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="quotation_list" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0080ff;fontColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="687" y="499" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="customer_list" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0080ff;fontColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="476" y="499" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="customer_detail" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0080ff;fontColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="476" y="619" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="14" style="entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" target="5" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="420" y="100" as="sourcePoint" />
+            <mxPoint x="170" y="160" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="15" style="endArrow=classic;html=1;" parent="1" source="3" target="4" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="269" y="190" as="sourcePoint" />
+            <mxPoint x="289" y="190" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="16" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="6" target="7" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="370" y="220" as="sourcePoint" />
+            <mxPoint x="70" y="400" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="17" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="6" target="9" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="430" y="220" as="sourcePoint" />
+            <mxPoint x="250" y="400" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="19" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="6" target="10" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="628" y="370" as="sourcePoint" />
+            <mxPoint x="420" y="549" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="20" style="entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="10" target="27" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="512.75" y="619" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="21" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="6" target="12" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="430" y="369" as="sourcePoint" />
+            <mxPoint x="680" y="549" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="22" parent="1" source="12" target="13" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="24" style="endArrow=classic;html=1;" parent="1" source="7" target="8" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="161" y="410" as="sourcePoint" />
+            <mxPoint x="311" y="470" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="25" style="endArrow=classic;html=1;" parent="1" source="7" target="9" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="161" y="410" as="sourcePoint" />
+            <mxPoint x="471" y="470" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="27" value="cotation_detail" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0080ff;fontColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="687" y="619" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7HM-TYzVGSv7COkrBMdq-27" value="login" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0080ff;fontColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="486" y="160" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7HM-TYzVGSv7COkrBMdq-28" style="exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="2" target="7HM-TYzVGSv7COkrBMdq-27" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="482" y="110" as="sourcePoint" />
+            <mxPoint x="586" y="170" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7HM-TYzVGSv7COkrBMdq-30" style="exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="7HM-TYzVGSv7COkrBMdq-27" target="6" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="430" y="110" as="sourcePoint" />
+            <mxPoint x="319" y="170" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7HM-TYzVGSv7COkrBMdq-31" value="new customer" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="154" y="130" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7HM-TYzVGSv7COkrBMdq-33" value="" style="group;rounded=1;fillColor=none;strokeColor=black;dashed=1;" parent="1" vertex="1">
+          <mxGeometry x="66" y="490" width="175" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="7HM-TYzVGSv7COkrBMdq-34" value="admin" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="66" y="460" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7HM-TYzVGSv7COkrBMdq-35" style="entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="13" target="10" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="616" y="569" as="sourcePoint" />
+            <mxPoint x="616" y="629" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7HM-TYzVGSv7COkrBMdq-36" value="" style="group;rounded=1;fillColor=none;strokeColor=black;dashed=1;" parent="1" vertex="1">
+          <mxGeometry x="296" y="490" width="530" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="7HM-TYzVGSv7COkrBMdq-37" value="user / customer" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="297" y="460" width="114" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
+
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/docs/desenhos/menu.drawio
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0" version="26.2.9">
+  <diagram name="Página-1" id="0">
+    <mxGraphModel dx="1420" dy="786" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="Home" style="rounded=1;fillColor=#660033;fontColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="305" y="62" width="90" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="Login" style="rounded=1;fillColor=#1E90FF;fontColor=#ffffff;flipV=0;flipH=1;" parent="1" vertex="1">
+          <mxGeometry x="430" y="206" width="90" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="Dashboard" style="rounded=1;fillColor=#1E90FF;fontColor=#ffffff;flipV=0;flipH=1;" parent="1" vertex="1">
+          <mxGeometry x="430" y="311" width="90" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="Admin" style="group;fillColor=none;strokeColor=black;dashed=1;container=0;align=left;verticalAlign=top;" parent="1" vertex="1">
+          <mxGeometry x="13" y="433" width="360" height="237" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="Usuário e Cliente" style="group;fillColor=none;strokeColor=black;dashed=1;container=0;align=left;verticalAlign=top;" parent="1" vertex="1">
+          <mxGeometry x="453" y="433" width="360" height="237" as="geometry" />
+        </mxCell>
+        <mxCell id="14" style="edgeStyle=elbowEdgeStyle;elbow=vertical;endArrow=classic;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="2" target="3" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="450" y="130" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="520" y="140" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="15" style="edgeStyle=elbowEdgeStyle;elbow=vertical;endArrow=classic;" parent="1" source="3" target="4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="16" style="edgeStyle=elbowEdgeStyle;elbow=vertical;endArrow=classic;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="4" target="6" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="480" y="390" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="430" y="400" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="17" style="edgeStyle=elbowEdgeStyle;elbow=vertical;endArrow=classic;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="4" target="10" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="570" y="370" as="sourcePoint" />
+            <mxPoint x="585" y="464" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="550" y="400" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6" value="User List" style="rounded=1;fillColor=#87CEFA;fontColor=#ffffff;container=0;" parent="1" vertex="1">
+          <mxGeometry x="158" y="478" width="90" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="User Detail" style="rounded=1;fillColor=#87CEFA;fontColor=#ffffff;container=0;" parent="1" vertex="1">
+          <mxGeometry x="85" y="583" width="90" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="Pass Reset" style="rounded=1;fillColor=#87CEFA;fontColor=#ffffff;container=0;" parent="1" vertex="1">
+          <mxGeometry x="230" y="583" width="90" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="Customer List" style="rounded=1;fillColor=#FFA07A;fontColor=#ffffff;flipV=0;flipH=1;" parent="1" vertex="1">
+          <mxGeometry x="522" y="478" width="90" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="Customer Detail" style="rounded=1;fillColor=#FFA07A;fontColor=#ffffff;flipV=0;flipH=1;" parent="1" vertex="1">
+          <mxGeometry x="522" y="583" width="90" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="Quotation List" style="rounded=1;fillColor=#FFA07A;fontColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="667" y="478" width="90" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="Quotation Detail" style="rounded=1;fillColor=#FFA07A;fontColor=#ffffff;flipV=1;" parent="1" vertex="1">
+          <mxGeometry x="667" y="583" width="90" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="Y1dWdXbFzBG6Ow272o0q-35" value="Customer New" style="rounded=1;fillColor=#006600;fontColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="85" y="206" width="90" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="Y1dWdXbFzBG6Ow272o0q-36" value="Quotation New" style="rounded=1;fillColor=#006600;fontColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="214" y="206" width="90" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="Y1dWdXbFzBG6Ow272o0q-37" value="Novo Cliente" style="group;fillColor=none;strokeColor=black;dashed=1;container=0;align=left;verticalAlign=top;" parent="1" vertex="1">
+          <mxGeometry x="13" y="173" width="360" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="Y1dWdXbFzBG6Ow272o0q-39" style="edgeStyle=elbowEdgeStyle;elbow=vertical;endArrow=classic;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="2" target="Y1dWdXbFzBG6Ow272o0q-35" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="440" y="110" as="sourcePoint" />
+            <mxPoint x="610" y="192" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="280" y="140" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Y1dWdXbFzBG6Ow272o0q-40" style="edgeStyle=elbowEdgeStyle;elbow=vertical;endArrow=classic;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="Y1dWdXbFzBG6Ow272o0q-35" target="Y1dWdXbFzBG6Ow272o0q-36" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="445" y="117" as="sourcePoint" />
+            <mxPoint x="138" y="222" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5wmmDi2MOuHa2G2dn6J2-17" style="edgeStyle=elbowEdgeStyle;elbow=vertical;endArrow=classic;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="6" target="7" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="526" y="261" as="sourcePoint" />
+            <mxPoint x="526" y="321" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5wmmDi2MOuHa2G2dn6J2-19" style="edgeStyle=elbowEdgeStyle;elbow=vertical;endArrow=classic;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="6" target="8" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="266" y="515" as="sourcePoint" />
+            <mxPoint x="266" y="575" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5wmmDi2MOuHa2G2dn6J2-20" style="edgeStyle=elbowEdgeStyle;elbow=vertical;endArrow=classic;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="10" target="11" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="339" y="515" as="sourcePoint" />
+            <mxPoint x="266" y="575" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5wmmDi2MOuHa2G2dn6J2-21" style="edgeStyle=elbowEdgeStyle;elbow=vertical;endArrow=classic;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="12" target="13" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="595" y="515" as="sourcePoint" />
+            <mxPoint x="595" y="575" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5wmmDi2MOuHa2G2dn6J2-24" style="edgeStyle=elbowEdgeStyle;elbow=vertical;endArrow=classic;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="4" target="12" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="550.5" y="356" as="sourcePoint" />
+            <mxPoint x="619.5" y="460" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="584.5" y="400" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
+
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/docs/desenhos/menu.png:Zone.Identifier
+
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/docs/desenhos/menu_v01.drawio:Zone.Identifier
+
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/css/home.css
+.home-options {
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+  
+  .home-title {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .home-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: var(--text-muted);
+  }
+  
+  .home-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  .home-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: background 0.3s;
+  }
+  
+  .home-btn:hover {
+    background-color: var(--primary-hover);
+  }
+  
+  @media (min-width: 600px) {
+    .home-buttons {
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+  
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/css/main.css:Zone.Identifier
+
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/css/user.css
+/* user.css */
+
+/* Exemplo: diferenciar cor do título da lista de usuários, se quiser */
+.list-header h2 {
+    color: var(--primary-color);
+  }
+
+  .perfil {
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-weight: bold;
+    color: white;
+    font-size: 0.9rem;
+  }
+  
+  .perfil.admin {
+    background-color: #6a1b9a; /* Roxo */
+  }
+  
+  .perfil.atendente {
+    background-color: #1976d2; /* Azul */
+  }
+  
+  .perfil.cliente {
+    background-color: #2e7d32; /* Verde */
+  }
+
+  
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/css/main.css
 /* ==========================
    VARIÁVEIS E RESET GERAL
 ========================== */
@@ -155,8 +2015,30 @@
   }
   
   main {
+    /*
+    */
     flex: 1;
   }
+
+  .main-scroll {
+    overflow: visible !important;
+    height: auto !important;
+  }
+  
+
+  .customer-list {
+    /*
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    */
+
+    
+    padding: var(--spacing-sm);
+  }
+
+
   
   /* ==========================
      CONTEÚDO PRINCIPAL
@@ -468,105 +2350,238 @@
       transform: translateY(0);
     }
   }
+  .form-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: var(--spacing-md);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  .user-form .form-group {
+    margin-bottom: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .user-form label {
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+  }
+  
+  .user-form input,
+  .user-form select {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .form-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+  }
+  
+  .btn-cancel {
+    background-color: #ccc;
+    color: #333;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
 
-# Arquivo: D:/Dev/Projetos/grupo05.cotacao.automovel\js\main.js
-document.addEventListener('DOMContentLoaded', () => {
-    // Carregar header e footer
-    fetch('header.html')
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById('header-container').innerHTML = data;
-        initMobileMenu(); // Inicializa o menu após carregar o header
-      });
+  /* Tamanhos flexíveis */
+.form-group.w-full {
+  width: 100%;
+}
+.form-group.w-70 {
+  width: 70%;
+}
+.form-group.w-60 {
+  width: 60%;
+}
+.form-group.w-50 {
+  width: 50%;
+}
+.form-group.w-40 {
+  width: 40%;
+}
+.form-group.w-30 {
+  width: 30%;
+}
+.form-group.w-20 {
+  width: 20%;
+}
+
+/* Agrupamento horizontal de campos */
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
   
-    fetch('footer.html')
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById('footer-container').innerHTML = data;
-      });
   
-    // Mostrar/Ocultar senha
-    const togglePassword = document.getElementById('togglePassword');
-    const passwordInput = document.getElementById('password');
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/css/home.css:Zone.Identifier
+
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/css/customer.css:Zone.Identifier
+
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/css/customer.css
+/* Mantém header e footer fixos */
+ 
+
   
-    if (togglePassword && passwordInput) {
-      togglePassword.addEventListener('click', () => {
-        const isPassword = passwordInput.type === 'password';
-        passwordInput.type = isPassword ? 'text' : 'password';
+  /* Cabeçalho da lista */
+  .list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto var(--spacing-sm);
+    padding: var(--spacing-sm);
+  }
   
-        const icon = togglePassword.querySelector('i');
-        if (icon) {
-          icon.classList.toggle('fa-eye');
-          icon.classList.toggle('fa-eye-slash');
-        }
-      });
+  .btn-add {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .btn-add i {
+    font-size: 1.2rem;
+  }
+  
+/* Container dos cards */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    justify-content: center;
+    padding: 0 0;
+    width: 100%;
+  }
+  
+  /* Estilo dos cards */
+  .customer-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: var(--spacing-md);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Mobile: ocupa toda a linha */
+    box-sizing: border-box;
+  }
+  
+  /* Em telas grandes, dois por linha */
+  @media (min-width: 768px) {
+    .customer-card {
+      width: 48%; /* dois por linha com gap */
     }
+  }
   
-    // Validação do formulário
-    const loginForm = document.getElementById('login-form');
-    if (loginForm) {
-      loginForm.addEventListener('submit', function (e) {
-        e.preventDefault();
   
-        const identifier = document.getElementById('identifier');
-        const password = document.getElementById('password');
-        let valid = true;
+  .customer-card.desativado {
+    opacity: 0.6;
+  }
   
-        // Resetar estilos e mensagens
-        [identifier, password].forEach(input => {
-          input.classList.remove('is-invalid', 'is-valid');
-          const errorMsg = input.nextElementSibling;
-          if (errorMsg && errorMsg.classList.contains('error-message')) {
-            errorMsg.remove();
-          }
-        });
+  .customer-card .actions {
+    margin-top: var(--spacing-sm);
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--spacing-sm);
+  }
   
-        // Validar identificador
-        if (!identifier.value || (!identifier.value.includes('@') && !/^\d{11}$/.test(identifier.value.replace(/\D/g, '')))) {
-          identifier.classList.add('is-invalid');
-          showError(identifier, 'Informe um e-mail válido ou CPF com 11 dígitos.');
-          valid = false;
-        } else {
-          identifier.classList.add('is-valid');
-        }
+  /* Botões com ícones e tooltips */
+  .btn-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    position: relative;
+  }
   
-        // Validar senha
-        if (!password.value || password.value.length < 6) {
-          password.classList.add('is-invalid');
-          showError(password, 'A senha deve ter pelo menos 6 caracteres.');
-          valid = false;
-        } else {
-          password.classList.add('is-valid');
-        }
+  .btn-icon:hover {
+    color: #ff6600;
+  }
   
-        if (valid) {
-          console.log('Login válido!');
-          setTimeout(() => {
-            alert('Login realizado com sucesso!');
-            // window.location.href = 'dashboard.html';
-          }, 1000);
-        }
-      });
-    }
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/css/dashboard.css:Zone.Identifier
+
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/css/quotation.css:Zone.Identifier
+
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/css/user.css:Zone.Identifier
+
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/css/quotation.css
+
+
+# Arquivo: /home/fabio/dev/grupo05/cotacao-automovel/src/css/dashboard.css
+.dashboard-section {
+    padding: 2rem 1rem;
+    text-align: center;
+  }
   
-    // Exibir mensagem de erro
-    function showError(input, message) {
-      const error = document.createElement('div');
-      error.classList.add('error-message');
-      error.textContent = message;
-      input.parentNode.appendChild(error);
-    }
-  });
+  .dashboard-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
   
-  // Função de menu mobile (fora do DOMContentLoaded para funcionar após fetch)
-  function initMobileMenu() {
-    const toggleButton = document.getElementById('menuToggle');
-    const mobileMenu = document.getElementById('mobileMenu');
+  .dashboard-options {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
   
-    if (toggleButton && mobileMenu) {
-      toggleButton.addEventListener('click', () => {
-        mobileMenu.classList.toggle('show');
-      });
+  .dashboard-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: background 0.3s;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dashboard-card i {
+    font-size: 1.5rem;
+  }
+  
+  .dashboard-card:hover {
+    background-color: var(--primary-hover);
+  }
+  
+  @media (min-width: 600px) {
+    .dashboard-options {
+      flex-direction: row;
+      justify-content: center;
     }
   }
   
